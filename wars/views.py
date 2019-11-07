@@ -39,6 +39,41 @@ def war_delete(request, pk):
     War.objects.get(id=pk).delete()
     return redirect('war_list')
 
+def battle_list(request):
+    battles = Battle.objects.all()
+    return render(request, 'wars/battle_list.html', {'wars': wars})
+
+def battle_detail(request, pk):
+    battle = Battle.objects.get(id = pk)
+    return render(request, 'wars/battle_detail.html', {'battle': battle})
+
+def battle_create(request):
+    if request.method == 'POST':
+        form = BattleForm(request.POST)
+        if form.is_valid():
+            battle = form.save()
+            return redirect('battle_detail', pk = battle.pk)
+    else:
+        form = BattleForm()
+    return render(request, 'wars/battle_form.html', {'form': form})
+
+
+def battle_edit(request, pk):
+    battle = Battle.objects.get(pk = pk)
+    if request.method == 'POST':
+        form = BattleForm(request.POST, instance = battle)
+        if form.is_valid():
+            battle = form.save()
+            return redirect('battle_detail', pk = battle.pk)
+    else:
+        form = BattleForm(instance = battle)
+    return render(request, 'wars/battle_form.html', {'form': form})
+
+def battle_delete(request, pk):
+    Battle.objects.get(id=pk).delete()
+    return redirect('battle_list')
+
+
 # class WarList(generics.ListCreateAPIView):
 #     queryset = War.objects.all()
 #     serializer_class = WarSerializer
