@@ -3,6 +3,14 @@ from . import views
 from rest_framework.routers import DefaultRouter
 
 urlpatterns = [
-    path('wars', views.WarList.as_view(), name='war_list'),
-    path('wars/<int:pk', views.WarDetail.as_view(), name='war_detail'),
+    path('', views.war_list, name='war_list'),
+    path('wars/<int:pk>', views.war_detail, name='war_detail'),
+    path('wars/new', views.war_create, name='war_create'),
+    path('wars/<int:pk>/edit', views.war_edit, name='war_edit'),
+    path('wars/<int:pk>/delete', views.war_delete, name='war_delete'),
 ]
+
+# urlpatterns = [
+#     path('wars', views.WarList.as_view(), name='war_list'),
+#     path('wars/<int:pk', views.WarDetail.as_view(), name='war_detail'),
+# ]
