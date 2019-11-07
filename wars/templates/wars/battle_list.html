@@ -4,7 +4,7 @@
 <h2> Battles <a href="{% url 'battle_create' %}">(+)</a></h2>
 
 <ul>
-    {% for battle in Battles %}
+    {% for battle in battles %}
     <li>
         <a href="{% url 'battle_detail' pk=battle.pk %}">{{battle.name}}</a>
     </li>
