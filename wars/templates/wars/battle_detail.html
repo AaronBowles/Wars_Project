@@ -1,0 +1,19 @@
+{% extends 'wars/base.html' %}
+
+{% block content %}
+
+<h2>{{ battle.name }} <a href="{% url 'battle_edit' pk=battle.pk %}">(edit)</a></h2>
+<h3>Location: {{ battle.location }}</h3>
+
+<h3> Major Players</h3>
+<h4>{{ battle.major_players }}</h4>
+
+<h3> Key Technologies </h3>
+<h4>{{ battle.key_technologies }}</h4>
+
+<h3> Victor </h3>
+<h4>{{ battle.winner }}</h4>
+
+<h3><a href="{% url 'battle_delete' pk=battle.pk %}">Delete</a></h3>
+
+{% endblock %}
