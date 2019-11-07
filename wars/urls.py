@@ -9,11 +9,11 @@ urlpatterns = [
     path('wars/<int:pk>/edit', views.war_edit, name='war_edit'),
     path('wars/<int:pk>/delete', views.war_delete, name='war_delete'),
 
-    path('battles', views.battle_list, name='battle_list')battlepath('battles/<int:pk>', views.war_detail, name='battle_detail'),
-    path('battles/new', views.war_create, name='battle_create'),
-    path('battles/<int:pk>/edit', views.war_edit, name='battle_edit'),
-    path('battles/<int:pk>/delete', views.war_delete, name='battle_delete'),
-
+    path('battles', views.battle_list, name='battle_list'),
+    path('battles/<int:pk>', views.battle_detail, name='battle_detail'),
+    path('battles/new', views.battle_create, name='battle_create'),
+    path('battles/<int:pk>/edit', views.battle_edit, name='battle_edit'),
+    path('battles/<int:pk>/delete', views.battle_delete, name='battle_delete'),
 ]
 
 # urlpatterns = [
