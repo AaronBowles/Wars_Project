@@ -1,8 +1,8 @@
 from django.shortcuts import render, redirect
 from django.http import JsonResponse
 
-from .forms import WarForm
-from .models import War
+from .forms import WarForm, BattleForm
+from .models import War, Battle
 # Create your views here.
 
 def war_list(request):
