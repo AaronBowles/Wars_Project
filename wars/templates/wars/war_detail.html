@@ -9,7 +9,11 @@
 <h4>{{ war.major_players }}</h4>
 
 <h3> Key Technologies </h3>
-<h4>{{ war.key_technologies }}</h4>
+<ul>
+    {% for key_technology in war.key_technologies %}
+    <li>{{key_technology}}</li>
+    {% endfor %}
+</ul>
 
 <h3> Victor </h3>
 <h4>{{ war.winner }}</h4>
