@@ -14,6 +14,15 @@
 <h3> Victor </h3>
 <h4>{{ war.winner }}</h4>
 
+<h3> Battles <a href="{% url 'battle_create' %}">(+)</a></h3>
+<ul>
+    {% for battle in war.battles.all %}
+    <li>
+        <a href="{% url 'battle_detail' pk=battle.pk %}">{{battle.name}}</a>
+    </li>
+    {% endfor %}
+</ul>
+
 <h3><a href="{% url 'war_delete' pk=war.pk %}">Delete</a></h3>
 
 {% endblock %}

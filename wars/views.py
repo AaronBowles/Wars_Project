@@ -41,7 +41,7 @@ def war_delete(request, pk):
 
 def battle_list(request):
     battles = Battle.objects.all()
-    return render(request, 'wars/battle_list.html', {'wars': wars})
+    return render(request, 'wars/battle_list.html', {'battles': battles})
 
 def battle_detail(request, pk):
     battle = Battle.objects.get(id = pk)
