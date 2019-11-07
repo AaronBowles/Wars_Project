@@ -6,10 +6,10 @@
 <h2>{{ battle.name }} <a href="{% url 'battle_edit' pk=battle.pk %}">(edit)</a></h2>
 <h3>Location: {{ battle.location }}</h3>
 
-<h3> Major Players</h3>
+<h3 class="label"> Major Players</h3>
 <h4>{{ battle.major_players }}</h4>
 
-<h3> Key Technologies </h3>
+<h3 class="label"> Key Technologies </h3>
 
 <ul>
     {% for key_technology in battle.key_technologies %}
@@ -17,7 +17,7 @@
     {% endfor %}
 </ul>   
 
-<h3> Victor </h3>
+<h3 class="label"> Victor </h3>
 <h4>{{ battle.winner }}</h4>
 
 <h3><a href="{% url 'battle_delete' pk=battle.pk %}">Delete</a></h3>

@@ -5,17 +5,17 @@
 <h2>{{ war.name }} <a href="{% url 'war_edit' pk=war.pk %}">(edit)</a></h2>
 <h4>Start Date: {{war.start_date}}</h4>
 <h4>End Date: {{war.end_date}}</h4>
-<h3> Major Players</h3>
+<h3 class="label"> Major Players</h3>
 <h4>{{ war.major_players }}</h4>
 
-<h3> Key Technologies </h3>
+<h3 class="label"> Key Technologies </h3>
 <ul>
     {% for key_technology in war.key_technologies %}
     <li>{{key_technology}}</li>
     {% endfor %}
 </ul>
 
-<h3> Victor </h3>
+<h3 class="label"> Victor </h3>
 <h4>{{ war.winner }}</h4>
 
 <h3> Battles <a href="{% url 'battle_create' %}">(+)</a></h3>
@@ -27,6 +27,6 @@
     {% endfor %}
 </ul>
 
-<h3><a href="{% url 'war_delete' pk=war.pk %}">Delete</a></h3>
+<h3><a href="{% url 'war_delete' pk=war.pk %}" class="delete">Delete</a></h3>
 
 {% endblock %}
