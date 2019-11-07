@@ -14,4 +14,6 @@
 <h3> Victor </h3>
 <h4>{{ war.winner }}</h4>
 
+<h3><a href="{% url 'war_delete' pk=war.pk %}">Delete</a></h3>
+
 {% endblock %}
