@@ -1,10 +1,11 @@
 {% extends 'wars/base.html' %}
 
 {% block content %}
-<h1>{{ battle.war }}</h1>
+<h1 class="war_label">{{ battle.war }}</h1>
 
-<h2>{{ battle.name }} <a href="{% url 'battle_edit' pk=battle.pk %}">(edit)</a></h2>
-<h3>Location: {{ battle.location }}</h3>
+<h2>{{ battle.name }} <a href="{% url 'battle_edit' pk=battle.pk %}" >(edit)</a></h2>
+<h3 class="label">Location</h3>
+<h4>{{battle.location}}</h4>
 
 <h3 class="label"> Major Players</h3>
 <h4>{{ battle.major_players }}</h4>
@@ -20,6 +21,6 @@
 <h3 class="label"> Victor </h3>
 <h4>{{ battle.winner }}</h4>
 
-<h3><a href="{% url 'battle_delete' pk=battle.pk %}">Delete</a></h3>
+<h3><a href="{% url 'battle_delete' pk=battle.pk %}" class="delete change">Delete</a></h3>
 
 {% endblock %}

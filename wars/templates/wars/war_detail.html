@@ -2,7 +2,7 @@
 
 {% block content %}
 
-<h2>{{ war.name }} <a href="{% url 'war_edit' pk=war.pk %}">(edit)</a></h2>
+<h2 class="war_label">{{ war.name }} <a href="{% url 'war_edit' pk=war.pk %}" >(edit)</a></h2>
 <h4>Start Date: {{war.start_date}}</h4>
 <h4>End Date: {{war.end_date}}</h4>
 <h3 class="label"> Major Players</h3>
@@ -18,7 +18,7 @@
 <h3 class="label"> Victor </h3>
 <h4>{{ war.winner }}</h4>
 
-<h3> Battles <a href="{% url 'battle_create' %}">(+)</a></h3>
+<h3> Battles <a href="{% url 'battle_create' %}" >(+)</a></h3>
 <ul>
     {% for battle in war.battles.all %}
     <li>
