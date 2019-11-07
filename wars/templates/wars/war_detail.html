@@ -3,7 +3,7 @@
 {% block content %}
 
 <h2>{{ war.name }} <a href="{% url 'war_edit' pk=war.pk %}">(edit)</a></h2>
-<h4>Start Date: {{war.state_date}}</h4>
+<h4>Start Date: {{war.start_date}}</h4>
 <h4>End Date: {{war.end_date}}</h4>
 <h3> Major Players</h3>
 <h4>{{ war.major_players }}</h4>
