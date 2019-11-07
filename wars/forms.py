@@ -1,5 +1,5 @@
 from django import forms
-from .model import War
+from .models import War
 
 class WarForm(forms.ModelForm):
 

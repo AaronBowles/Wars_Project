@@ -14,19 +14,19 @@ def war_detail(request, pk):
     return render(request, 'wars/war_detail.html', {'war': war})
 
 def war_create(request):
-    if request.method = 'POST':
+    if request.method == 'POST':
         form = WarForm(request.POST)
         if form.is_valid():
             war = form.save()
             return redirect('war_detail', pk = war.pk)
     else:
-        from = WarForm()
+        form = WarForm()
     return render(request, 'wars/war_form.html', {'form': form})
 
 
 def war_edit(request, pk):
     war = War.objects.get(pk = pk)
-    if request.method = 'POST':
+    if request.method == 'POST':
         form = WarForm(request.POST, instance = war)
         if form.is_valid():
             war = form.save()
